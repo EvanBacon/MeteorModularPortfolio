@@ -1,0 +1,29 @@
+<template name="templateBasicFooter">
+    <footer class="meteoris-footer">
+        <div class="container text-center">
+          {{> upArrow color="black"}}
+          <br/>
+          <br/>
+            <span class="copyright">copyright &copy;
+            <a href="http://www.piyiku.biz" target="_blank">Jessica Covi</a>.
+            <br/>Powered by <a href="https://github.com/radiegtya/meteoris" target="_blank">Evan</a></span>
+            <br/>
+            <p>
+              {{ username }}
+            </p>
+        </div>
+    </footer>
+</template>
+
+<template name="upArrow">
+  <a href="#intro" class="black-text" id="up" >
+    <i class="black-text fa pulsate_up_down fa-arrow-circle-o-up" aria-hidden="true" style="font-size: 3rem;"></i>
+    <br/>
+    Up</a>
+</template>
+
+<template name="downArrow">
+  <a href="{{target}}" class="black-text" id="down" >
+    <i class="black-text fa pulsate_down fa-arrow-circle-o-down" aria-hidden="true" style="font-size: 3rem;"></i>
+  </a>
+</template>

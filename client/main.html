@@ -1,0 +1,26 @@
+<head>
+    <title>Atelier</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/svg/logo.svg">
+</head>
+
+<template name="basic">
+
+    {{> meteorisFlash}}
+    <div class="meteoris-content">
+      <!-- {{> status}} -->
+
+        <!--{{>yield region="templateBasicHeader"}}-->
+        {{> templateBasicHeader}}
+
+        {{#transition in="fadeIn:300" out="fadeOut:300"}}
+
+        {{>yield}}
+        {{/transition}}
+
+    </div>
+    <!--{{>yield region="templateBasicFooter"}}-->
+    {{> templateBasicFooter}}
+
+</template>

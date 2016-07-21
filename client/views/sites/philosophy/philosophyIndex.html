@@ -1,0 +1,32 @@
+<template name="philosophyIndex">
+  <div id="intro" class="wrapper section scrollspy no-top-margin">
+    <div class="container row">
+      <h2>{{welcomeMessage}}</h2>
+        {{> headerTagline title="We are Huntly" }}
+
+        {{#if philosophies.isEmpty}}
+          <p>
+            No Content
+          </p>
+        {{else}}
+          {{> philosophyCardWrapper philosophies=philosophies }}
+        {{/if }}
+    </div>
+  </div>
+</template>
+
+
+<template name="philosophyCardWrapper">
+  <div class="fadein row" style="width:75%; margin-left:auto; margin-right:auto;">
+    {{#each philosophies.models}}
+      <div class="col s12 m6">
+        <img class="draggable loaded visible" src="{{#if image}}{{app "baseUrl"}}{{image.url}}{{else}}{{app "baseUrl"}}/images/noimage.jpg{{/if}}" style="height: auto; max-height: 400px; width: 100%;">
+        {{> quoteBlock title=title content=content }}
+      </div>
+    {{/each}}
+  </div>
+</template>
+
+<template name="headerTagline">
+  <h1 class="page_header center">{{title}}</h1>
+</template>

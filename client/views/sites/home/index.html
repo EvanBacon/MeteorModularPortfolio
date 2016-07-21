@@ -1,0 +1,103 @@
+<template name="sitesIndex">
+  <div id="intro" class="wrapper section scrollspy no-top-margin">
+    {{> slider slides=slides}}
+    {{> story story=slides.stories}}
+  </div>
+</template>
+
+<template name="story">
+  <div id="next" class="container row section scrollspy no-top-margin">
+    <h2>{{welcomeMessage}}</h2>
+
+    {{#if story.isEmpty}}
+    <p>
+      No Content
+    </p>
+    {{else}}
+
+    {{#each story.models}}
+      {{#if isEven @index}}
+      {{> imageBlockLeft image=image title=title content=content tagline=title}}
+      {{else}}
+      {{> imageBlockRight image=image title=title content=content tagline=title}}
+
+      {{/if}}
+    {{/each}}
+
+      {{/if}}
+    <!-- {{> imageBlockLeft}}
+
+    <div class="offset-top">
+      {{> imageBlockRight}}
+    </div>
+    <div class="offset-top">
+      {{> imageBlockLeft}}
+    </div>
+    <div class="offset-top">
+      {{> imageBlockRight}}
+    </div> -->
+  </div>
+</template>
+
+
+<template name="imageBlockLeft">
+  <div class="row">
+
+    <div class="col s12 m10">
+      <!-- <div class="fadein draggable loaded visible block-med div-image" style='background: url("{{app "baseUrl"}}{{image.url}}") no-repeat center center fixed; background-size: cover;'></div> -->
+
+      {{#if image}}
+        <div class="fadein draggable loaded visible block-med div-image" style='background: url("{{app "baseUrl"}}{{image.url}}") no-repeat center center fixed; background-size: cover;'></div>
+      {{/if}}
+
+
+      {{> quoteBlock title=title content=content}}
+    </div>
+
+    <div class="col s12 m1 block-med quoteBlock" style="margin-top: 100px; ">
+      {{> imageTagline text=tagline}}
+    </div>
+  </div>
+</template>
+
+
+<template name="imageBlockRight">
+  <div class="row">
+    <div class="col s12 m1 offset-m3 block-big" style="z-index: 1; margin-top: 100px;">
+      {{> imageTagline text=tagline}}
+    </div>
+    <div class="col s12 m8 ">
+      {{#if image}}
+        <div class="fadein draggable loaded visible block-big div-image" style='background: url("{{app "baseUrl"}}{{image.url}}") no-repeat center center fixed; background-size: cover;'>
+        </div>
+      {{/if}}
+
+      {{> quoteBlock title=title content=content}}
+    </div>
+  </div>
+</template>
+
+
+<template name="imageTagline">
+  <div class="fadein quote-bold quote">
+    <h3>{{text}}</h3>
+  </div>
+</template>
+
+
+<template name="quoteBlock">
+  <div id="quoteBlock" class="fadein" style="height: auto;">
+    <h6 class="title">
+      <strong>— </strong><strong>{{title}}</strong>
+    </h6>
+    <h7>{{content}}</h7>
+  </div>
+</template>
+
+
+<template name="breadcrumb">
+  <ol class="breadcrumb">
+    <li><a href="{{pathFor 'sitesIndex'}}">Home</a></li>
+    <li class="active">index</li>
+  </ol>
+</template>

@@ -1,0 +1,45 @@
+<template name="slider">
+  <div class="wrapper">
+    <div class="slider" style="height:80vh;">
+      <ul class="slides " style="height:100%;" >
+        {{#if slides.isEmpty}}
+        <p>
+          No Content
+        </p>
+        {{else}}
+
+        {{#each slides.models}}
+        <li>
+
+          <a style="height:100%;" class="carousel-item" href="#one!">
+            {{#if image}}
+            <div class="slide-image" style='background: url("{{app "baseUrl"}}{{image.url}}") no-repeat center center fixed; background-size: cover;'></div>
+              <!-- <img class="image" src="{{app "baseUrl"}}{{image.url}}"/> -->
+            {{/if}}
+
+
+            <div class="caption left-align">
+              {{#if title}}
+
+              <h3 class="light grey-text text-lighten-3" >{{title}}</h3>
+              {{/if}}
+              {{#if content}}
+              <h5 class="light grey-text text-lighten-4">
+                {{content}}
+              </h5>
+              {{/if}}
+            </div>
+          </a>
+        </li>
+
+        {{/each}}
+        {{/if}}
+      </ul>
+    </div>
+
+    <div class="row center" style="height:10vh; z-index:1;">
+      {{> downArrow target="#next"}}
+    </div>
+    <!-- <a href="#" style="min-height: 10vh;">start</a> -->
+  </div>
+</template>

@@ -1,0 +1,19 @@
+<template name="worksUpdate">
+    <div class="container">
+        <!--Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li><a href="{{pathFor 'sitesIndex'}}">Home</a></li>
+            <li><a href="{{pathFor 'worksIndex'}}">Works</a></li>
+            <li class="active">update</li>
+        </ol>
+
+        <div id="basic-form">
+            <div class="title">
+                <h3 class="pull-left">Update Works</h3>
+            </div>
+            <div class="clearfix"></div>
+
+            {{> works_form model}}  
+        </div>        
+    </div>
+</template>
