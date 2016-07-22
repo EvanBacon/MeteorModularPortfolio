@@ -7,5 +7,8 @@ Template.templateBasicFooter.helpers({
     var user = Meteor.users.findOne({}, { sort: { 'profile.mugenRoleGroupId': 1 } });
     console.log("user", user.profile);
     return user.profile.name;
-  }
+  },
+  year: function () {
+    return (new Date()).getFullYear();
+  },
 });

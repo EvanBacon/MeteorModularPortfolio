@@ -17,10 +17,9 @@
 
     {{#each story.models}}
       {{#if isEven @index}}
-      {{> imageBlockLeft image=image title=title content=content tagline=title}}
+        {{> imageBlockLeft image=image title=title content=content tagline=title}}
       {{else}}
-      {{> imageBlockRight image=image title=title content=content tagline=title}}
-
+        {{> imageBlockRight image=image title=title content=content tagline=title}}
       {{/if}}
     {{/each}}
 
@@ -45,9 +44,13 @@
 
     <div class="col s12 m10">
       <!-- <div class="fadein draggable loaded visible block-med div-image" style='background: url("{{app "baseUrl"}}{{image.url}}") no-repeat center center fixed; background-size: cover;'></div> -->
-
+      
       {{#if image}}
-        <div class="fadein draggable loaded visible block-med div-image" style='background: url("{{app "baseUrl"}}{{image.url}}") no-repeat center center fixed; background-size: cover;'></div>
+        <div class="fadein draggable loaded visible block-med div-image" style='background: url("{{app "baseUrl"}}{{image.url}}") no-repeat center center fixed; background-size: cover;'>
+        </div>
+      {{else}}
+        <div class="fadein draggable loaded visible block-med div-image" style='background: url("{{app "baseUrl"}}/images/noimage.jpg") no-repeat center center fixed; background-size: cover;'>
+        </div>
       {{/if}}
 
 
@@ -69,6 +72,9 @@
     <div class="col s12 m8 ">
       {{#if image}}
         <div class="fadein draggable loaded visible block-big div-image" style='background: url("{{app "baseUrl"}}{{image.url}}") no-repeat center center fixed; background-size: cover;'>
+        </div>
+      {{else}}
+        <div class="fadein draggable loaded visible block-big div-image" style='background: url("{{app "baseUrl"}}/images/noimage.jpg") no-repeat center center fixed; background-size: cover;'>
         </div>
       {{/if}}
 

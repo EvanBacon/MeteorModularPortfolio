@@ -173,3 +173,15 @@ nav ul a:hover {
   height: 60vh;
   min-height: 400px;
 }
+
+footer a {
+  color: #656565;
+}
+
+
+::selection {
+  background: #ffce45; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #ffce45; /* Gecko Browsers */
+}
