@@ -23,3 +23,73 @@ $error-color: color("red", "base") !default;
 // $link-color: color("light-blue", "darken-1") !default;
 
 @import "{poetic:materialize-scss}/sass/materialize.scss";
+
+
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 90%;
+}
+
+@media only screen and (min-width: 601px) {
+  .container {
+    width: 85%;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .container {
+    width: 80%;
+  }
+}
+
+
+
+/*Social*/
+.social-links a {
+
+  font-size: 30px;
+  margin: 0 5px;
+
+  transition: all 0.3 ease;
+
+
+}
+.facebook-icon {
+  :hover {
+    color: #3b5999;
+  }
+}
+.twitter-icon {
+  :hover {
+    color:#55acee;
+  }
+}
+.instagram-icon {
+  :hover {
+    color:#3f729b;
+  }
+}
+
+.linkedin-icon {
+  :hover {
+    color:#0077B5;
+  }
+}
+
+.dribbble-icon {
+  :hover {
+    color:#ea4c89;
+  }
+}
+
+#quoteBlock {
+  width: 50%;
+  .title {
+    font-weight: bold;
+    font-size:17px;
+  }
+  .quote-content {
+    font-size:17px;
+  }
+}

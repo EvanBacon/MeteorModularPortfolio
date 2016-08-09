@@ -3,15 +3,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/svg/logo.svg">
+
 </head>
 
-<template name="basic">
+<template name="layout">
 
     {{> meteorisFlash}}
     <div class="meteoris-content">
       <!-- {{> status}} -->
 
         <!--{{>yield region="templateBasicHeader"}}-->
+
+        <!-- <div class="row center" style="position:fixed;">
+          <a href="{{pathFor 'sitesIndex'}}" class="brand-logo center">YESS</a>
+        </div> -->
+
+
         {{> templateBasicHeader}}
 
         {{#transition in="fadeIn:300" out="fadeOut:300"}}

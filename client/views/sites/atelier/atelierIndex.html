@@ -1,0 +1,90 @@
+<template name="atelierIndex">
+  <div id="intro" class="wrapper section scrollspy no-top-margin">
+    <div class="container">
+      <h2>{{welcomeMessage}}</h2>
+
+      <div class="row">
+        <div class="col s12 m4 offset-m4">
+      {{>header text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate"}}
+        </div>
+      </div>
+
+
+        {{#if data.associates.isEmpty}}
+          <p>
+            {{>templatePublicLoading}}
+          </p>
+        {{else}}
+          {{> atelierCardWrapper data=data.associates }}
+        {{/if }}
+    </div>
+  </div>
+</template>
+
+
+<template name="atelierCardWrapper">
+
+  <!-- <div class="row" style="width:100%; margin-left:auto; margin-right:auto;"> -->
+    <div class="row active-with-click">
+
+    {{#each data.models}}
+    {{> personCard name=name title=title description=description image=image facebook=facebook twitter=twitter linkedin=linkedin website=website }}
+      <!-- <div class="col s12 m6">
+
+        {{#if image}}
+          <div class="fadein block-big div-image" style='background: url("{{app "baseUrl"}}{{image.url}}") no-repeat center center; background-size: cover;'>
+          </div>
+        {{else}}
+          <div class="fadein valign-wrapper block-big div-image" style='background: url("{{app "baseUrl"}}/images/noimage.jpg") no-repeat center center; background-size: cover;'>
+          {{> preloader}}
+          </div>
+        {{/if}}
+
+        {{> quoteBlock title=title content=content }}
+      </div> -->
+    {{/each}}
+  </div>
+</template>
+
+<template name="personCard">
+    <div class="col-md-4 col-sm-6 col-xs-12">
+  <article class="material-card Yellow">
+      <h2>
+          <span>{{name}}</span>
+          <strong>
+              <i class="fa fa-fw fa-star"></i>
+              {{title}}
+          </strong>
+      </h2>
+      <div class="mc-content">
+          <div class="img-container">
+              <img class="img-responsive" src="{{#if image}}{{app "baseUrl"}}{{image.url}}{{else}}{{app "baseUrl"}}/images/noimage.jpg{{/if}}">
+          </div>
+          <div class="mc-description">
+              {{description}}
+          </div>
+      </div>
+      <a class="mc-btn-action">
+          <i class="fa fa-bars"></i>
+      </a>
+      <div class="mc-footer">
+          <h4>
+              Social
+          </h4>
+          {{#if facebook}}
+          <a href="{{facebook}}" class="fa fa-fw fa-facebook"></a>
+          {{/if}}
+          {{#if twitter}}
+          <a href="{{twitter}}" class="fa fa-fw fa-twitter"></a>
+          {{/if}}
+          {{#if linkedin}}
+          <a href="{{linkedin}}" class="fa fa-fw fa-linkedin"></a>
+          {{/if}}
+          {{#if website}}
+          <a href="{{website}}" class="fa fa-fw fa-google-plus"></a>
+          {{/if}}
+      </div>
+  </article>
+</div>
+
+</template>

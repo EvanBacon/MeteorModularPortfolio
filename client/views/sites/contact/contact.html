@@ -1,41 +1,67 @@
 <template name="contactIndex">
-  <div class="container">
+  <div class="container dark-container">
 
-  <div class="row">
-    <div class="col s6">
-      <h3>-- Get in touch</h3>
-      <p>
-        <a href="#">email</a>
-        <a href="#">phone</a>
-      </p>
-      <br/>
-      <p>
-        <a href="#">address</a>
-      </p>
+    {{>header text="Contact Us"}}
+    <div class="row">
+      <div class="col s6">
+        <h3 class="content-title">— Get in touch</h3>
+        {{#if this.data.models.email}}
 
-      <br/>
-      {{> socialLinks }}
+        <a href="#">{{this.data.models.email}}</a>
+        <br>
+        {{/if}}
+        {{#if this.data.models.phone}}
+        <a href="#">{{this.data.models.phone}}</a>
+        <br>
+        {{/if}}
+        <br/>
+        <p>
+          {{#if this.data.models.address}}
 
+          <a href="#">{{this.data.models.address}}</a>
+          {{/if}}
+
+        </p>
+
+        <br/>
+        {{> socialLinks data=this.data.models}}
+
+      </div>
+      <div class="col s6">
+        <img style="flex:1;" src="images/contact.jpg" alt="" />
+      </div>
     </div>
-    <div class="col s6">
-      <img src="" alt="" />
-    </div>
+
+    <!-- {{> contactFormBasic}} -->
   </div>
 
+</template>
+
+<template name="contactFormBasic">
   <div class="row">
-    <div class="col s12">
+    <div class="col s12 m6">
       {{> contactForm }}
     </div>
   </div>
 
-</div>
-
 </template>
 
-
 <template name="socialLinks">
-  <a href="#">Facebook</a>
-  <a href="#">Instagram</a>
-  <a href="#">Twitter</a>
-  <a href="{{username}}">LinkedIn</a>
+  <div class="social-links">
+    {{#if data.instagram}}
+    <a target="_blank" class="facebook-instagram" href={{data.instagram}}><i class="fa fa-instagram" aria-hidden="true"></i></a>
+    {{/if}}
+
+    {{#if data.facebook}}
+    <a target="_blank" class="facebook-icon" href={{data.facebook}}><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    {{/if}}
+
+    {{#if data.twitter}}
+    <a target="_blank" class="twitter-icon" href={{data.twitter}}><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    {{/if}}
+
+    {{#if data.linkedin}}
+    <a target="_blank" class="linkedin-icon" href={{data.linkedin}}><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+    {{/if}}
+  </div>
 </template>

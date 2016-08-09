@@ -36,6 +36,9 @@ Template.sitesIndex.rendered = function() {
   $(document).ready(function(){
     sr.reveal('.fadein');
     $('.scrollspy').scrollSpy();
+    console.log("later");
+    $('.carousel.carousel-slider').carousel({full_width: true, indicators: true});
+
   });
 };
 
@@ -43,6 +46,7 @@ Template.workIndex.rendered = function() {
   $(document).ready(function(){
     sr.reveal('.fadein');
     $('.scrollspy').scrollSpy();
+
   });
 };
 

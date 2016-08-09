@@ -1,16 +1,36 @@
 <template name="templateBasicFooter">
     <footer class="meteoris-footer">
         <div class="container text-center">
-          {{> upArrow color="black"}}
-          <br/>
-          <br/>
-            <span class="copyright">copyright &copy;{{ year }} 
+          <div class="row">
+            {{> upArrow color="black"}}
+
+          </div>
+
+          <div class="row">
+            <div class="col s4">
+              {{> socialLinks data=social}}
+            </div>
+            <div class="col s4">
+
+
+            <span class="copyright">copyright &copy;{{ year }}
             <a href="http://www.piyiku.biz" target="_blank">Jessica Covi</a>.
-            <br/>Powered by <a href="https://github.com/radiegtya/meteoris" target="_blank">Evan</a></span>
+            <br/>Powered by <a href="https://baconbrix.com/" target="_blank">Evan</a></span>
             <br/>
-            <p>
-              {{ username }}
-            </p>
+              <!-- {{ username }} -->
+              {{#unless isAdmin}} | <a href="{{pathFor route='atSignIn'}}">Sign In</a>{{/unless}}
+            </div>
+            <div class="col s4">
+              {{#if social.address}}
+                <p>
+                  {{social.address}}
+                </p>
+              {{/if}}
+            </div>
+
+          </div>
+
+
         </div>
     </footer>
 </template>

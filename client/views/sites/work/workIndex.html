@@ -2,14 +2,15 @@
   <div id="intro" class="wrapper section scrollspy no-top-margin">
     <div class="container row">
       <h2>{{welcomeMessage}}</h2>
-        {{> headerTagline title="We are Huntly" }}
 
-        {{#if philosophies.isEmpty}}
+        {{> header text="Works"}}
+
+        {{#if data.isEmpty}}
           <p>
             No Content
           </p>
         {{else}}
-          {{> workCardWrapper works=works }}
+          {{> workCardWrapper works=data }}
         {{/if }}
     </div>
   </div>
@@ -17,12 +18,41 @@
 
 
 <template name="workCardWrapper">
+  <div class="row" style="width:85%; margin-left:auto; margin-right:auto;">
+
     {{#each works.models}}
-    <div class="row" style="width:75%; margin-left:auto; margin-right:auto;">
-      <div class="col s12">
-        <img class="fadein draggable loaded visible" src="{{#if image}}{{app "baseUrl"}}{{image.url}}{{else}}{{app "baseUrl"}}/images/noimage.jpg{{/if}}" style="height: auto; max-height: 400px; width: 100%;">
+      <div class="col s12 {{randomCol}}">
+        <div class="padding-wrapper-content">
+        <div class="hover-fade padding-wrapper-image">
+
+
+
+        {{#if image}}
+        {{#if multi}}
+          <div class=" block-med div-image stack-image-width" style='width:{{randWidth}}%; background: url("{{app "baseUrl"}}{{image.url}}") no-repeat center center; background-size: cover;'>
+            <div class="block-med div-image white-border stack-image-width" style='transform: translate({{randOffset}}px, {{randOffset}}px); width:{{randWidth}}%; background: url("{{app "baseUrl"}}{{image.url}}") no-repeat center center; background-size: cover;'></div>
+          </div>
+        {{else}}
+          <div class="{{round}} block-med div-image equal-ratio" style='width:{{randWidth}}%; background: url("{{app "baseUrl"}}{{image.url}}") no-repeat center center; background-size: cover;'></div>
+        {{/if}}
+
+        {{else}}
+          <div class=" block-med div-image" style='background: url("{{app "baseUrl"}}/images/noimage.jpg") no-repeat center center; background-size: cover;'>
+          </div>
+        {{/if}}
+      </div>
+        <!-- {{#if round}}
+
+          <img class="round draggable loaded visible" src="{{#if image}}{{app "baseUrl"}}{{image.url}}{{else}}{{app "baseUrl"}}/images/noimage.jpg{{/if}}" style="height: auto; max-height: 400px; width: 100%;">
+        {{else}}
+          <img class="draggable loaded visible" src="{{#if image}}{{app "baseUrl"}}{{image.url}}{{else}}{{app "baseUrl"}}/images/noimage.jpg{{/if}}" style="height: auto; max-height: 400px; width: 100%;">
+        {{/if}} -->
+
         {{> quoteBlock title=title content=content }}
       </div>
-    </div>
+
+      </div>
     {{/each}}
+  </div>
+
 </template>

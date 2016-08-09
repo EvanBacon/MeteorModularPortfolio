@@ -1,42 +1,48 @@
 <template name="slider">
   <div class="wrapper">
     <div class="slider" style="height:80vh;">
+    <!-- <div class="carousel carousel-slider center" style="height:80vh;"> -->
       <ul class="slides " style="height:100%;" >
+      <!-- <div class="carousel-fixed-item center">
+        {{> downArrow target="#next"}}
+      </div> -->
+
+
         {{#if slides.isEmpty}}
-        <p>
+        <li>
+        <!-- <a href="#one!"> -->
           No Content
-        </p>
+          <!-- </a> -->
+        </li>
         {{else}}
 
         {{#each slides.models}}
         <li>
-
-          <a style="height:100%;" class="carousel-item" href="#one!">
+          <!-- <a style="height:100%;" class="carousel-item" href="#{{nameForIndex @index}}!"> -->
             {{#if image}}
-            <div class="slide-image" style='background: url("{{app "baseUrl"}}{{image.url}}") no-repeat center center fixed; background-size: cover;'></div>
-              <!-- <img class="image" src="{{app "baseUrl"}}{{image.url}}"/> -->
+              <div class="slide-image" style='background: url("{{app "baseUrl"}}{{image.url}}") no-repeat center center fixed; background-size: cover;'>
+
+                            <div class="caption left-align">
+                              {{#if title}}
+
+                              <h3 class="light grey-text text-lighten-3" >{{title}}</h3>
+                              {{/if}}
+                              {{#if content}}
+                              <h5 class="light grey-text text-lighten-4">
+                                {{content}}
+                              </h5>
+                              {{/if}}
+                            </div>
+              </div>
+
             {{/if}}
-
-
-            <div class="caption left-align">
-              {{#if title}}
-
-              <h3 class="light grey-text text-lighten-3" >{{title}}</h3>
-              {{/if}}
-              {{#if content}}
-              <h5 class="light grey-text text-lighten-4">
-                {{content}}
-              </h5>
-              {{/if}}
-            </div>
-          </a>
+          <!-- </a> -->
         </li>
 
         {{/each}}
         {{/if}}
       </ul>
     </div>
-
     <div class="row center" style="height:10vh; z-index:1;">
       {{> downArrow target="#next"}}
     </div>

@@ -1,3 +1,4 @@
+/*Yellow #ffce45 */
 .navbar {
   background: white;
 }
@@ -20,7 +21,7 @@ a:hover {
 }
 
 a:hover, a:focus {
-    color: #23527c;
+    color: #ffce45;
     text-decoration: none;
 }
 
@@ -54,6 +55,12 @@ header, main {
 .quote-inverse {
   transform: translate(0%, 0);
 
+}
+
+.white-border {
+  border-color: white;
+border-width: thick;
+border-style: solid;
 }
 .div-image {
   min-width: 100%;
@@ -112,7 +119,7 @@ header, main {
 
 .slide-image {
 
-    opacity: 0.6;
+    /*opacity: 0.6;*/
     min-height: 100%;
     width: 100%;
     height: auto;
@@ -174,14 +181,89 @@ nav ul a:hover {
   min-height: 400px;
 }
 
+.stack-image-width {
+  min-width: 90%;
+  max-width: 90%;
+}
+.padding-wrapper-content {
+padding: 10px;
+}
+.padding-wrapper-image {
+padding: 10px;
+}
+
+
 footer a {
   color: #656565;
 }
 
+.contact-title {
+  font-size: 16px !important;
+  color: #757576;
+  font-weight: bold;
+}
+
+.dark-container a {
+  color: #757576;
+  font-size: 15px ;
+}
+.dark-container a:hover {
+  border-bottom: 1px solid #757576;
+}
+
+.header-text {
+  font-size: 15px;
+  color: #757576;
+ font-weight: bold;
+}
+.header-text::before {
+    content: "— ";
+}
+.header-text::after {
+    content: " —";
+}
+
+.underline {
+  text-decoration: underline;
+}
 
 ::selection {
   background: #ffce45; /* WebKit/Blink Browsers */
 }
 ::-moz-selection {
   background: #ffce45; /* Gecko Browsers */
+}
+
+.content-title {
+  font-size: 18px;
+}
+
+
+.round {
+  border-radius: 50%;
+}
+
+
+
+
+.hover-fade .div-image   {
+  transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear; /* Firefox 4 */
+  -webkit-transition: all 0.2s linear; /* Safari and Chrome */
+  -o-transition: all 0.2s linear; /* Opera */
+  -ms-transition: all 0.2s linear; /* Explorer 10 */
+}
+.hover-fade {
+  transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear; /* Firefox 4 */
+  -webkit-transition: all 0.2s linear; /* Safari and Chrome */
+  -o-transition: all 0.2s linear; /* Opera */
+  -ms-transition: all 0.2s linear; /* Explorer 10 */
+}
+.hover-fade:hover {
+    opacity: 0.8;
+}
+
+.hover-fade:hover .div-image {
+  box-shadow: 0px 0px 20px 0px #333;
 }

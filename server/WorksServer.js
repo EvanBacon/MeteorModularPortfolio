@@ -30,6 +30,11 @@ return Works.find(collection.title);}
 },
 /* return all related Works */
 {
+  find: function(collection) {
+  return Works.find(collection.isWork);}
+  },
+  /* return all related Works */
+  {
 find: function(collection) {
 return Works.find(collection.content);}
 },

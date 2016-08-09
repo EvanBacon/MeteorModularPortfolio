@@ -1,0 +1,27 @@
+header[role="banner"] {
+  #logo-main {
+    display: block;
+    margin: 20px auto;
+  }
+}
+
+nav {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.0), 0 2px 10px 0 rgba(0, 0, 0, 0.0) !important;
+  border-bottom-color: transparent !important;
+}
+#navbar-primary.navbar-default {
+  background: transparent;
+  border: none;
+  .navbar-nav {
+    width: 100%;
+    text-align: center;
+    > li {
+      display: inline-block;
+      float: none;
+      > a {
+        padding-left: 30px;
+        padding-right: 30px;
+        }
+    }
+  }
+}

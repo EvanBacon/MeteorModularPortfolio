@@ -1,0 +1,37 @@
+<template name="aboutIndex">
+  <div id="intro" class="wrapper section scrollspy no-top-margin">
+    <div class="container">
+      <h2>{{welcomeMessage}}</h2>
+      {{>header text="How we work"}}
+
+        {{#if philosophies.isEmpty}}
+          <p>
+            No Content
+          </p>
+        {{else}}
+          {{> aboutCardWrapper philosophies=philosophies }}
+        {{/if }}
+    </div>
+  </div>
+</template>
+
+
+<template name="aboutCardWrapper">
+  <div class="row" style="width:100%; margin-left:auto; margin-right:auto;">
+    {{#each philosophies.models}}
+      <div class="col s12 m6">
+
+        {{#if image}}
+          <div class="fadein block-big div-image" style='background: url("{{app "baseUrl"}}{{image.url}}") no-repeat center center; background-size: cover;'>
+          </div>
+        {{else}}
+          <div class="fadein valign-wrapper block-big div-image" style='background: url("{{app "baseUrl"}}/images/noimage.jpg") no-repeat center center; background-size: cover;'>
+          {{> preloader}}
+          </div>
+        {{/if}}
+
+        {{> quoteBlock title=title content=content }}
+      </div>
+    {{/each}}
+  </div>
+</template>

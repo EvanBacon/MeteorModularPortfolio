@@ -1,0 +1,48 @@
+<template name="associates_form">
+    <form id="associates_form">
+        <div class="form-group {{#if error 'name'}}has-error{{/if}}">
+<label for="name" class="control-label">Name </label>
+<input type="text" id="name" value="{{name}}" placeholder="Name" class="form-control">
+<span class="help-block">{{error "name"}}</span>
+</div>
+<div class="form-group {{#if error 'title'}}has-error{{/if}}">
+<label for="title" class="control-label">Title </label>
+<input type="text" id="title" value="{{title}}" placeholder="Title" class="form-control">
+<span class="help-block">{{error "title"}}</span>
+</div>
+<div class="form-group {{#if error 'description'}}has-error{{/if}}">
+<label for="description" class="control-label">Description </label>
+<input type="text" id="description" value="{{description}}" placeholder="Description" class="form-control">
+<span class="help-block">{{error "description"}}</span>
+</div>
+<div class="form-group {{#if error 'facebook'}}has-error{{/if}}">
+<label for="facebook" class="control-label">Facebook </label>
+<input type="text" id="facebook" value="{{facebook}}" placeholder="Facebook" class="form-control">
+<span class="help-block">{{error "facebook"}}</span>
+</div>
+<div class="form-group {{#if error 'twitter'}}has-error{{/if}}">
+<label for="twitter" class="control-label">Twitter </label>
+<input type="text" id="twitter" value="{{twitter}}" placeholder="Twitter" class="form-control">
+<span class="help-block">{{error "twitter"}}</span>
+</div>
+<div class="form-group {{#if error 'linkedin'}}has-error{{/if}}">
+<label for="linkedin" class="control-label">Linkedin </label>
+<input type="text" id="linkedin" value="{{linkedin}}" placeholder="Linkedin" class="form-control">
+<span class="help-block">{{error "linkedin"}}</span>
+</div>
+<div class="form-group {{#if error 'website'}}has-error{{/if}}">
+<label for="website" class="control-label">Website </label>
+<input type="text" id="website" value="{{website}}" placeholder="Website" class="form-control">
+<span class="help-block">{{error "website"}}</span>
+</div>
+
+    <div class="form-group {{#if error 'image'}}has-error{{/if}}">
+      <label for="image" class="control-label">File</label>
+      <input type="file" id="image" class="form-control">
+      <span class="help-block">{{error "image"}}</span>
+    </div>
+
+        <button id="btnSave" type="submit" class="btn btn-success">Submit</button>
+        <a href="{{pathFor 'associatesIndex'}}" class="btn btn-default">Back</a>
+    </form>
+</template>

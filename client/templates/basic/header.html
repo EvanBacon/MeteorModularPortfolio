@@ -10,16 +10,17 @@
           {{/if}}
         </ul>
 
-        <a href="{{pathFor 'sitesIndex'}}" class="brand-logo center">JESS</a>
 
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+        <ul id="nav-mobile" class="center hide-on-med-and-down">
+          <!-- <li><a href="{{pathFor 'sitesIndex'}}">Home</a></li> -->
           <li><a href="{{pathFor 'sitesIndex'}}">Home</a></li>
           <li><a href="{{pathFor 'workIndex'}}">Work</a></li>
           <li><a href="{{pathFor 'philosophyIndex'}}">Philosophy</a></li>
-          <li><a href="{{pathFor 'contactIndex'}}">Contact</a></li>
+          <li><a href="{{pathFor 'aboutIndex'}}">About</a></li>
           <li><a href="{{pathFor 'atelierIndex'}}">Atelier</a></li>
+          <li><a href="{{pathFor 'contactIndex'}}">Contact</a></li>
         </ul>
-
         <!-- <ul class="right hide-on-med-and-down">
         <li><a href="{{pathFor 'contactIndex'}}"><i class="fa fa-instagram" style="font-size: 2.3rem;" aria-hidden="true"></i></a></li>
       </ul> -->
@@ -33,10 +34,13 @@
               <a class="collapsible-header">Edit <span class="caret"></span></a>
               <div class="collapsible-body">
                 <ul>
+
+                  <li><a href="{{pathFor route='settings'}}">Settings</a></li>
                   <li><a href="{{pathFor 'slidesIndex'}}">Slides / Home</a></li>
                   <li><a href="{{pathFor 'worksIndex'}}">Works / Portfolio</a></li>
                   <li><a href="{{pathFor 'philosophiesIndex'}}">Philosophies / About</a></li>
                   <li><a href="{{pathFor 'articlesIndex'}}">Articles / News</a></li>
+                  <li><a href="{{pathFor 'associatesIndex'}}">Associates</a></li>
 
                   <li><a href="{{pathFor 'usersIndex'}}">Users / Contact</a></li>
 
