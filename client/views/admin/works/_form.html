@@ -1,3 +1,4 @@
+
 <template name="works_form">
   <form id="works_form">
 
@@ -26,15 +27,12 @@
         <span class="help-block">{{error "isWork"}}</span>
 
       </p>
-      <!-- <label for="isSlide" class="control-label">IsSlide *</label>
-      <input type="text" id="isSlide" value="{{isSlide}}" placeholder="IsSlide" class="form-control" autofocus="true">
-      <span class="help-block">{{error "isSlide"}}</span> -->
     </div>
 
 
     <div class="form-group {{#if error 'image'}}has-error{{/if}}">
       <label for="image" class="control-label">Image</label>
-      <input type="file" id="image" class="form-control">
+      <input type="file" id="image" class="form-control" multiple>
       <span class="help-block">{{error "image"}}</span>
     </div>
 

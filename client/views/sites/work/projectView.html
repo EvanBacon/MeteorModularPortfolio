@@ -1,0 +1,29 @@
+<template name="projectView">
+  <div id="intro" class="wrapper section scrollspy no-top-margin">
+    <div class="container row">
+      <h2>{{welcomeMessage}}</h2>
+        {{> header text=model.title}}
+        {{#with model}}
+
+          {{#if image}}
+            <div class="fadein block-big div-image" style='background: url("{{app "baseUrl"}}{{image.url}}") no-repeat center center; background-size: cover;'>
+            </div>
+          {{else}}
+            <div class="fadein valign-wrapper block-big div-image" style='background: url("{{app "baseUrl"}}/images/noimage.jpg") no-repeat center center; background-size: cover;'>
+            {{> preloader}}
+            </div>
+          {{/if}}
+
+<div class="row center">
+  <div class="col s12 m4 offset-m4" style="text-align:center; padding-top: 50px;">
+    {{> storyBlock title=title content=content }}
+    {{> storyBlock title=date content="" }}
+
+  </div>
+</div>
+
+
+        {{/with}}
+    </div>
+  </div>
+</template>

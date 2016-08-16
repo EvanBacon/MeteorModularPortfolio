@@ -23,7 +23,8 @@
     {{#each works.models}}
       <div class="col s12 {{randomCol}}">
         <div class="padding-wrapper-content">
-        <div class="hover-fade padding-wrapper-image">
+
+        <a href="/work/view/{{_id}}"><div class="hover-fade padding-wrapper-image">
 
 
 
@@ -40,7 +41,7 @@
           <div class=" block-med div-image" style='background: url("{{app "baseUrl"}}/images/noimage.jpg") no-repeat center center; background-size: cover;'>
           </div>
         {{/if}}
-      </div>
+      </div></a>
         <!-- {{#if round}}
 
           <img class="round draggable loaded visible" src="{{#if image}}{{app "baseUrl"}}{{image.url}}{{else}}{{app "baseUrl"}}/images/noimage.jpg{{/if}}" style="height: auto; max-height: 400px; width: 100%;">

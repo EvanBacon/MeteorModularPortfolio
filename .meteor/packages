@@ -7,16 +7,15 @@ aldeed:collection2
 iron:router
 meteorhacks:subs-manager
 reywood:publish-composite
-accounts-base
-accounts-password
+accounts-base@1.2.9
+accounts-password@1.2.12
 mystor:device-detection
 sacha:spin
 mizzao:timesync
 jquery
 momentjs:moment
 lepozepo:accounting
-
-standard-app-packages
+standard-app-packages@1.0.9
 useraccounts:bootstrap
 useraccounts:iron-routing
 elmar-save-loader
@@ -33,14 +32,14 @@ cfs:ejson-file
 cfs:gridfs
 
 francocatena:status
-accounts-facebook
-accounts-google
-service-configuration
+accounts-facebook@1.0.10
+accounts-google@1.0.10
+service-configuration@1.0.10
 fortawesome:fontawesome
 ground:db
 aldeed:autoform
 peerlibrary:fs
-spiderable
+spiderable@1.0.13
 gadicohen:phantomjs
 natestrauser:select2
 dburles:collection-helpers
@@ -68,15 +67,16 @@ lamatyus:scrollreveal
 meteorhacks:unblock
 
 
-meteor-platform
-less
+less@2.7.4
 nemo64:bootstrap
 mrt:moment
 mrt:jquery-imagesloaded
 
-email
+email@1.1.16
 manuelschoebel:wait-on-lib
 mizzao:autocomplete
 numeral:numeral
 dfischer:phantomjs
 datariot:ganalytics
+
+yogiben:autoform-file

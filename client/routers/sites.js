@@ -11,6 +11,12 @@ Router.route('work', {
     name: 'workIndex',
     controller: WorkController,
 });
+Router.route('work/view/:_id?', {
+    name: 'workView',
+    controller: WorkController,
+    action: 'view',
+});
+
 Router.route('philosophy', {
     name: 'philosophyIndex',
     controller: PhilosophyController,
